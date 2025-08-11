@@ -1,0 +1,1467 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandMe AI | Dubai's Smart Advertising Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;900;700;1000&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00C2FF;
+            --secondary: #FF4D8D;
+            --dark: #0A0A13;
+            --light: #F5F7FA;
+            --accent: #7B2CBF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* AI-Powered Neuro Navigation */
+        .neuro-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 20, 20, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+            .logo::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: linear-gradient(90deg, var(--primary), var(--accent));
+                transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .logo:hover::after {
+                width: 100%;
+            }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+            .nav-links li {
+                margin: 0 15px;
+                position: relative;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--light);
+                font-weight: 500;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                position: relative;
+                padding: 5px 0;
+            }
+
+                .nav-links a::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, var(--secondary), var(--primary));
+                    transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                }
+
+                .nav-links a:hover::before {
+                    width: 100%;
+                }
+
+                .nav-links a:hover {
+                    color: white;
+                }
+
+        .ai-pulse {
+            position: relative;
+        }
+
+            .ai-pulse::after {
+                content: '';
+                position: absolute;
+                top: -5px;
+                right: -8px;
+                width: 8px;
+                height: 8px;
+                background-color: var(--secondary);
+                border-radius: 50%;
+                animation: pulse 2s infinite;
+            }
+
+        .contact-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 5px 25px rgba(0, 194, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .contact-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .contact-btn:hover::before {
+                left: 100%;
+            }
+
+            .contact-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 30px rgba(0, 194, 255, 0.5);
+            }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Holographic Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+            .hero-bg::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 30% 50%, var(--primary), transparent 70%);
+                animation: float 8s ease-in-out infinite;
+            }
+
+            .hero-bg::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 70% 50%, var(--secondary), transparent 70%);
+                animation: float 10s ease-in-out infinite reverse;
+            }
+
+        .hero-content {
+            width: 60%;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            background: linear-gradient(90deg, var(--light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 194, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .primary-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .primary-btn:hover::before {
+                left: 100%;
+            }
+
+            .primary-btn:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 194, 255, 0.6);
+            }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--primary);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .secondary-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(0, 194, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .secondary-btn:hover::before {
+                left: 100%;
+            }
+
+            .secondary-btn:hover {
+                background: rgba(0, 194, 255, 0.1);
+                transform: translateY(-5px);
+            }
+
+        .hero-ai {
+            position: absolute;
+            right: 5%;
+            width: 35%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ai-orb {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--primary), var(--accent));
+            box-shadow: 0 0 100px rgba(0, 194, 255, 0.5);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+            filter: blur(1px);
+        }
+
+            .ai-orb::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                border-radius: 50%;
+                background: radial-gradient(circle at 70% 70%, var(--secondary), var(--accent));
+                mix-blend-mode: overlay;
+                animation: float 8s ease-in-out infinite reverse;
+            }
+
+            .ai-orb::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: radial-gradient(circle at center, transparent 40%, rgba(0, 194, 255, 0.2) 100%);
+            }
+
+        .ai-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particle-float linear infinite;
+        }
+
+        /* AI-Powered Services Grid */
+        .services {
+            padding: 150px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .services::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 20% 80%, rgba(123, 44, 191, 0.1), transparent 70%);
+                z-index: -1;
+            }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+            .service-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(0, 194, 255, 0.1), rgba(123, 44, 191, 0.1));
+                z-index: -1;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .service-card:hover::before {
+                opacity: 1;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                border-color: rgba(0, 194, 255, 0.3);
+            }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 194, 255, 0.3);
+        }
+
+            .service-icon i {
+                font-size: 36px;
+                color: white;
+            }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+            .service-link i {
+                margin-left: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .service-link:hover {
+                color: var(--secondary);
+            }
+
+                .service-link:hover i {
+                    transform: translateX(5px);
+                }
+
+        /* AI-Powered Interactive Portfolio */
+        .portfolio {
+            padding: 150px 5%;
+            background: linear-gradient(to bottom, rgba(10, 10, 20, 0.9), var(--dark));
+            position: relative;
+        }
+
+            .portfolio::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(0,194,255,0.05)" stroke-width="0.5"/></svg>');
+                background-size: 50px 50px;
+                opacity: 0.3;
+            }
+
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+        }
+
+            .portfolio-header h2 {
+                font-size: 48px;
+                font-weight: 800;
+                background: linear-gradient(90deg, var(--light), var(--primary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        .portfolio-nav {
+            display: flex;
+            gap: 15px;
+        }
+
+            .portfolio-nav button {
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 30px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+                .portfolio-nav button:hover, .portfolio-nav button.active {
+                    background: linear-gradient(135deg, var(--primary), var(--accent));
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(0, 194, 255, 0.3);
+                }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1/1;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform-style: preserve-3d;
+        }
+
+            .portfolio-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+                opacity: 0;
+                transition: opacity 0.5s ease;
+                z-index: 1;
+            }
+
+            .portfolio-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .portfolio-item:hover {
+                transform: translateY(-10px) scale(1.03);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            }
+
+                .portfolio-item:hover::before {
+                    opacity: 1;
+                }
+
+                .portfolio-item:hover img {
+                    transform: scale(1.1);
+                }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            z-index: 2;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .portfolio-info p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+            .portfolio-link i {
+                margin-left: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .portfolio-link:hover {
+                color: var(--primary);
+            }
+
+                .portfolio-link:hover i {
+                    transform: translateX(5px);
+                }
+
+        /* AI-Powered CTA Section */
+        .cta {
+            padding: 150px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cta::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 70% 30%, rgba(255, 77, 141, 0.1), transparent 70%);
+                z-index: -1;
+            }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(0, 194, 255, 0.1), rgba(123, 44, 191, 0.1));
+            border-radius: 30px;
+            padding: 80px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cta-container::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(0, 194, 255, 0.05) 0%, transparent 70%);
+                animation: rotate 20s linear infinite;
+                z-index: -1;
+            }
+
+        .cta h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 15px 40px rgba(0, 194, 255, 0.4);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cta-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .cta-btn:hover::before {
+                left: 100%;
+            }
+
+            .cta-btn:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 50px rgba(0, 194, 255, 0.6);
+            }
+
+        /* AI-Powered Footer */
+        footer {
+            background: linear-gradient(to bottom, var(--dark), #050510);
+            padding: 100px 5% 50px;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+
+            .footer-col h3::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(90deg, var(--primary), var(--secondary));
+            }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+            .footer-links a:hover {
+                color: var(--primary);
+                transform: translateX(5px);
+            }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+            .footer-social a {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+                .footer-social a:hover {
+                    background: linear-gradient(135deg, var(--primary), var(--accent));
+                    transform: translateY(-3px);
+                }
+
+        .footer-newsletter input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+            .footer-newsletter input::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+        .footer-newsletter button {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+            .footer-newsletter button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 194, 255, 0.3);
+            }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* AI Assistant */
+        .ai-assistant {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 194, 255, 0.4);
+            z-index: 999;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+            .ai-assistant:hover {
+                transform: scale(1.1) translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 194, 255, 0.6);
+            }
+
+            .ai-assistant i {
+                font-size: 28px;
+                color: white;
+                animation: pulse 2s infinite;
+            }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content {
+                width: 70%;
+            }
+
+            .hero-ai {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+
+            .hero-content {
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-ai {
+                position: relative;
+                right: auto;
+                width: 100%;
+                height: 300px;
+            }
+
+            .ai-orb {
+                width: 200px;
+                height: 200px;
+            }
+
+            .services-grid, .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .cta-container {
+                padding: 60px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(10, 10, 20, 0.95);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+                .nav-links.active {
+                    left: 0;
+                }
+
+                .nav-links li {
+                    margin: 15px 0;
+                }
+
+            .hamburger {
+                display: block;
+            }
+
+            .section-title, .cta h2, .portfolio-header h2 {
+                font-size: 36px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p, .section-subtitle, .cta p {
+                font-size: 16px;
+            }
+
+            .portfolio-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .portfolio-nav {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .primary-btn, .secondary-btn, .cta-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+
+            .cta-container {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- AI-Powered Neuro Navigation -->
+    <nav class="neuro-nav">
+        <div class="logo">BrandMe </div>
+        <ul class="nav-links">
+            <li><a href="#" class="ai-pulse">Home</a></li>
+            <li><a href="#">Signage</a></li>
+            <li><a href="#">Exhibition Stands</a></li>
+            <li><a href="#">Digital Printing</a></li>
+            <li><a href="#">Display Stands</a></li>
+            <li><a href="#">Acrylic Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="tel:+971504684201" class="contact-btn">+971 50 468 4201</a>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Holographic Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Signage Company in Dubai</h1>
+            <p>Brand Me Advertising is a full service - design, fabrication, installation & maintenance provider of all types of indoor and outdoor signage solutions. Located in Dubai - UAE, we specialize in providing contemporary signage solutions that will help your business get noticed.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="primary-btn">Learn More</a>
+                <a href="#portfolio" class="secondary-btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="hero-ai">
+            <div class="ai-orb">
+                <div class="ai-particles" id="particles"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered Services Grid -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Our neural network analyzes your brand needs to deliver hyper-personalized advertising solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sign"></i>
+                    </div>
+                    <h3> Signage </h3>
+                    <p>
+                        Brand Me Advertising is a full service
+                        - design, fabrication, installation & maintenance...
+                    </p>
+                    <a href="#" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>Exhibition Stands</h3>
+                    <p>
+                        Exhibition Stands
+                        Machine learning designs that predict visitor flow and optimize stand layo..
+                    </p>
+                    <a href="#" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Digital Printing</h3>
+                    <p>Digital Printingis a type of product that can be adapted for all media and is suitable for large..</p>
+                    <a href="#" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>LED Displays</h3>
+                    <p>We are a professional manufacturer who produces a wide range of quality LED.</p>
+                    <a href="#" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Branding</h3>
+                    <p>AI-assisted brand strategy development with predictive market analysis and trend forecasting.</p>
+                    <a href="#" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Interiors</h3>
+                    <p>Interiors is described as any related project that involves turning an interior space into an.</p>
+                    <a href="#" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered Interactive Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <h2>Product Launch</h2>
+                <div class="portfolio-nav">
+                    <button class="active">All</button>
+                    <button>Signage</button>
+                    <button>Exhibitions</button>
+                    <button>Printing</button>
+                    <button>Branding</button>
+                </div>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dubai Mall Signage">
+                    <div class="portfolio-info">
+                        <h3>Dubai Mall Signage</h3>
+                        <p>AI-optimized wayfinding system analyzing visitor patterns</p>
+                        <a href="#" class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GITEX Technology Week">
+                    <div class="portfolio-info">
+                        <h3>GITEX Technology Week</h3>
+                        <p>Machine learning-designed exhibition stand with 37% more engagement</p>
+                        <a href="#" class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Retail Branding">
+                    <div class="portfolio-info">
+                        <h3>Retail Branding</h3>
+                        <p>AI-generated color schemes increasing brand recognition by 42%</p>
+                        <a href="#" class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Corporate Office Signage">
+                    <div class="portfolio-info">
+                        <h3>DIFC Office Signage</h3>
+                        <p>Neural network-optimized corporate identity system</p>
+                        <a href="#" class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Arab Health Exhibition">
+                    <div class="portfolio-info">
+                        <h3>Arab Health</h3>
+                        <p>Interactive exhibition stand with AI-powered engagement tracking</p>
+                        <a href="#" class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://static.icartea.com/cc/20250629001234_15-facts-about-hyundai-1689755163.webp?imageMogr2/format/webp/interlace/1/quality/60/thumbnail/1200x" alt="Vehicle Branding">
+                    <div class="portfolio-info">
+                        <h3>Fleet Branding</h3>
+                        <p>Computer vision-optimized vehicle wraps for maximum visibility</p>
+                        <a href="#" class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-container">
+            <h2>Discount!</h2>
+            <p>
+                Let us quote your next project! We will discount our quoted price by 5% to thank you for giving us the opportunity to prove to you that we deliver on our promises!
+                Managing Director.
+            </p>
+            <a href="#" class="cta-btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- AI-Powered Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-about">
+                <h3>BrandMe AI</h3>
+                <p>Dubai's first AI-powered advertising agency combining artificial intelligence with human creativity to deliver transformative brand experiences.</p>
+                <p>+971 50 468 4201 | info@brandmeai.com</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Signage</a></li>
+                    <li><a href="#">Exhibition Stands</a></li>
+                    <li><a href="#">Acrylic Products</a></li>
+                    <li><a href="#">Display Stands</a></li>
+                    <li><a href="#">Exhibition Stands Company</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+                <p><i class="fas fa-phone"></i> +971 50 468 4201</p>
+                <p><i class="fas fa-envelope"></i> info@brandmeai.com</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h3>AI Insights</h3>
+                <p>Subscribe to receive our AI-generated market trends and advertising insights.</p>
+                <input type="email" placeholder="Your Email Address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div>
+            <center>
+                Exhibition Stand Builders In Dubai | Digital Printing In Dubai | Signage Company | Display Stands | Printing Services | Exhibition Stand Contractors |
+                <center>Advertising Company In Dubai| Exhibition Stands |</center>
+            </center>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 BrandMe AI. All rights reserved. | Dubai's Intelligent Advertising Partner</p>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <script>
+        // AI-Powered Navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ?
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // AI Particle Effect
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+
+                particle.style.width = ${ size } px;
+                particle.style.height = ${ size } px;
+                particle.style.left = ${ posX }%;
+                particle.style.top = ${ posY }%;
+                particle.style.animationDelay = ${ delay } s;
+                particle.style.animationDuration = ${ duration } s;
+
+                particlesContainer.appendChild(particle);
+            }
+
+            // Portfolio Filtering
+            const filterButtons = document.querySelectorAll('.portfolio-nav button');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const filter = button.textContent;
+
+                    portfolioItems.forEach(item => {
+                        if (filter === 'All' || item.querySelector('h3').textContent.includes(filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // AI Assistant Interaction
+            const aiAssistant = document.querySelector('.ai-assistant');
+            aiAssistant.addEventListener('click', () => {
+                alert('AI Assistant: Hello! I can help you get an instant quote, schedule a consultation, or answer any questions about our AI-powered services. In a full implementation, this would connect to a conversational AI interface.');
+            });
+
+            // Scroll animations
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const neuroNav = document.querySelector('.neuro-nav');
+
+                if (scrollPosition > 50) {
+                    neuroNav.style.backgroundColor = 'rgba(10, 10, 20, 0.95)';
+                    neuroNav.style.padding = '15px 5%';
+                } else {
+                    neuroNav.style.backgroundColor = 'rgba(10, 10, 20, 0.8)';
+                    neuroNav.style.padding = '20px 5%';
+                }
+            });
+
+            // Service card hover effect enhancement
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const x = e.offsetX;
+                    const y = e.offsetY;
+                    const centerX = card.offsetWidth / 2;
+                    const centerY = card.offsetHeight / 2;
+
+                    const angleX = (y - centerY) / 10;
+                    const angleY = (centerX - x) / 10;
+
+                    card.style.transform = perspective(1000px) rotateX(${ angleX }deg) rotateY(${ angleY }deg) translateY(-10px);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
